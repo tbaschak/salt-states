@@ -1,0 +1,31 @@
+{%- if grains['id'] == 'ns2.henchman21.net' %}
+allow-notify-from=208.81.1.141
+local-address=127.0.0.1:5301
+local-ipv6=
+{% else %}
+local-address={{ salt['network.interfaces']()['eth0']['inet'][0]['address'] }}
+local-ipv6={{ salt['network.interfaces']()['eth0']['inet6'][0]['address'] }}
+allow-notify-from=
+{% endif %}
+daemon=no
+
+{%- if grains['id'] == 'ns0.ciscodude.net' %}
+allow-notify-from=162.219.162.110
+slave
+api=yes
+api-key=SOMEGENERATEDCRAP
+webserver=yes
+# IP Address of web server to listen on
+webserver-address=127.0.0.1
+# Port of web server to listen on
+webserver-port=8081
+# Web server access is only allowed from these subnets
+webserver-allow-from=0.0.0.0/0,::/0
+{% endif %}
+
+default-soa-name=ns0.ciscodude.net
+default-soa-mail=noc.hextet.net
+#default-soa-edit=INCEPTION-INCREMENT
+#default-soa-edit-signed=INCEPTION-INCREMENT
+default-soa-edit=
+default-soa-edit-signed=
