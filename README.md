@@ -12,6 +12,16 @@ It also enforces the file `/etc/nginx/snippets/ciscodude.rewrites.conf` which ge
 
 This state sets up the observium_agent script and its prereq's.
 
+## powerdns
+
+### dnsdist
+
+dnsdist is an amazing DNS load balancer. This sets it up in front of some recursors.
+
+### recursor and authoritative
+
+This sets up powerdns recursor or authoritative server.
+
 ## tor
 
 This state sets up the official deb.torproject.org repo and installs the stable version of tor.
