@@ -8,6 +8,10 @@ This state sets up nginx using the nginx-extras package from [DotDeb](https://ww
 
 It also enforces the file `/etc/nginx/snippets/ciscodude.rewrites.conf` which gets included by two virtualhosts.
 
+## observium-agent
+
+This state sets up the observium_agent script and its prereq's.
+
 ## tor
 
 This state sets up the official deb.torproject.org repo and installs the stable version of tor.
